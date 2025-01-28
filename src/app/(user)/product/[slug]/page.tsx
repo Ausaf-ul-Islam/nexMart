@@ -18,7 +18,9 @@ interface Props {
 
 const SingleProductPage = async ({ params: { slug } }: Props) => {
     // Fetch product and best sellers data
-    const query = groq`*[_type == 'product' && slug.current == $slug][0]{ ... }`;
+    const query = groq`*[_type == 'product' && slug.current == $slug][0]{
+     ...
+      }`;
     const product: ProductData = await client.fetch(query, { slug });
     const bestSellersData: ProductData[] = await getBestSellersData();
 
@@ -39,7 +41,7 @@ const SingleProductPage = async ({ params: { slug } }: Props) => {
                     {/* Product Image */}
                     <div className="h-full xl:col-span-2">
                         <Image
-                            src={urlFor(product.image).url()}
+                            src={urlFor(product?.image).url()}
                             alt={product.title || "Product image"}
                             className="w-full h-full object-contain rounded-lg"
                             width={500}
@@ -60,8 +62,8 @@ const SingleProductPage = async ({ params: { slug } }: Props) => {
                 <Container className="my-10 p-6 rounded-xl bg-white">
                     <Headings title="Best" subtitle="Sellers" />
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {bestSellersData.map((item) => (
-                            <ProductCard item={item} key={item._id} />
+                        {bestSellersData?.map((item) => (
+                            <ProductCard item={item} key={item?._id} />
                         ))}
                     </div>
                 </Container>

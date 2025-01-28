@@ -41,7 +41,7 @@ const SuccessContainer = ({ id }: { id: string }) => {
                 email: session?.user?.email as string,
                 id: id,
                 totalAmt,
-            }),
+            }, []),
         });
 
         const data = await response.json();
@@ -49,8 +49,8 @@ const SuccessContainer = ({ id }: { id: string }) => {
             setLoading(false);
             dispatch(resetCart());
             toast.success(data?.message);
-        }
-    };
+        } []
+    }
 
     useEffect(() => {
         if (session?.user && cart.length) {
@@ -60,7 +60,7 @@ const SuccessContainer = ({ id }: { id: string }) => {
     return (
         <div>
             {loading ? (
-                <Loader/>
+                <Loader />
             ) : (
                 <div className="bg-gradient-to-b from-green-50 to-white flex items-center justify-center px-4 py-28">
                     <div className="max-w-md w-full space-y-8 text-center">

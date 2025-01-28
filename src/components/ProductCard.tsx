@@ -15,7 +15,7 @@ const ProductCard = ({ item }: { item: ProductData }) => {
             className="border border-lightText/40 rounded-md relative group overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl bg-white"
         >
             <div className="overflow-hidden relative">
-                <Link href={"/product/${item?.slug?.current"}>
+                <Link href={`/product/${item?.slug?.current}`}>
                     <Image
                         src={urlFor(item?.image)?.url() ?? "/fallback-image.jpg"}
                         alt={item?._type}

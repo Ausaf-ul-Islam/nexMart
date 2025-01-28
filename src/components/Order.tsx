@@ -8,7 +8,6 @@ import FormattedPrice from "./FormattedPrice";
 import { ProductData } from "@/types";
 import { motion, AnimatePresence } from "framer-motion";
 import Table, {
-    Badge,
     Button,
     Card,
     CardContent,

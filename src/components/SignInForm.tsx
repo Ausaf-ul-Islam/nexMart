@@ -71,7 +71,7 @@ export const SignInForm = () => {
             {/* Register Now link */}
             <div className="text-center mt-4">
                 <p className="text-sm">
-                    Don't have an account?{" "}
+                    Don&#39;t have an account?{" "}
                     <Link href="/signin" className="text-lightOrange hover:text-darkOrange">
                         Register Now
                     </Link>

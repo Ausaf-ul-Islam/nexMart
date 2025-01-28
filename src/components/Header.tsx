@@ -7,7 +7,7 @@ import SearchInput from "./SearchInput"
 import Logo from "./Logo"
 import { navBarList } from "@/constants"
 import { usePathname } from "next/navigation"
-import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "@/firebase" // Firebase auth instance
 
 const Header = () => {

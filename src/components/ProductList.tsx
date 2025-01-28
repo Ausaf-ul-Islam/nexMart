@@ -7,11 +7,11 @@ import Headings from "./Headings";
 export const revalidate = 0;
 interface ProductTopHeadings {
     showHeading?: boolean;
-    title?: string | any;
+    title?: string;
     subtitle?: string;
 }
 
-const ProductList = async ({ showHeading = true, title, subtitle }: ProductTopHeadings) => {
+const ProductList = async ({ showHeading = true }: ProductTopHeadings) => {
     const products: ProductData[] = await getProductsData(); // Fetch product data
 
     return (
